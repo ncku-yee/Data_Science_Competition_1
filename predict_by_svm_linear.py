@@ -13,30 +13,30 @@ from sklearn.model_selection import train_test_split
 
 df_train = pd.read_csv('train.csv')
 df_test = pd.read_csv('test.csv')
+print(df_train.columns)
+x = df_train[['CreditScore', 'Age', 'Balance', 'Tenure', 'HasCrCard', 'IsActiveMember', 'EstimatedSalary']].values
+
+y = df_train['Exited'].values
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.1, random_state = 500, stratify=y)
+
 # =============================================================================
-# print(df_train.columns)
-# x = df_train[['HasCrCard', 'NumOfProducts', 'IsActiveMember']].values
+# x_train = df_train[['Tenure', 'HasCrCard', 'NumOfProducts', 'IsActiveMember']].values
 # 
-# y = df_train['Exited'].values
-# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.1, random_state = 50, stratify=y)
+# y_train = df_train['Exited'].values
+# 
+# x_test = df_test[['Tenure', 'HasCrCard', 'NumOfProducts', 'IsActiveMember']].values
 # =============================================================================
-
-x_train = df_train[['Tenure', 'HasCrCard', 'NumOfProducts', 'IsActiveMember']].values
-
-y_train = df_train['Exited'].values
-
-x_test = df_test[['Tenure', 'HasCrCard', 'NumOfProducts', 'IsActiveMember']].values
 #%%
 from sklearn import svm
 
-#clf = svm.SVC(gamma = 1, decision_function_shape = 'ovo')
 #clf = svm.SVC(kernel='linear')
-clf = svm.SVC(kernel='rbf')
+#clf = svm.SVC(kernel='rbf')
+
+clf = svm.SVC(gamma = 1, decision_function_shape = 'ovo')
+#y_predict = clf.predict(x_test)
 
 clf.fit(x_train, y_train)
-y_predict = clf.predict(x_test)
-
-#acc = clf.score(x_test, y_test)
+acc = clf.score(x_test, y_test)
 
 
 #%%
