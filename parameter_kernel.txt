@@ -1,4 +1,6 @@
 file	parameter
-predict_exited_6	kernal='ovo'	gamma=0.1	acc=0.8580	precision=0.8387	fScore=0.5375
-predict_exited_7	kernel='ovo'	gamma=0.081	acc=0.8595	precision=0.8039	fScore=0.5386
-
+predict_exited_6	kernal='rbf-ovo'	gamma=0.1	acc=0.8580	precision=0.8387	fScore=0.5375
+predict_exited_7	kernel='rbf-ovo'	gamma=0.081	acc=0.8595	precision=0.8039	fScore=0.5386
+predict_exited_8	kernel='bagging'	acc=0.84	precision=X	fScore=X
+predict_exited_9	kernel='rbf-ovo'	gamma=0.057	acc=0.8615	precision=0.8387	fScore=0.5406
+predict_exited_9	kernel='rbf-ovo'	gamma=0.057	acc=0.8625	precision=0.8387	fScore=0.5514(add AMC_Bank_Customers)
