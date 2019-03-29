@@ -13,32 +13,32 @@ from sklearn.model_selection import train_test_split
 
 df_train = pd.read_csv('train.csv')
 df_test = pd.read_csv('test.csv')
+print(df_train.columns)
+x = df_train[['CreditScore', 'Geography', 'Gender', 'Age', 'Balance', 'Tenure', 'NumOfProducts',  'HasCrCard', 'IsActiveMember', 'EstimatedSalary']].copy()
+x['Geography'] = x['Geography'].replace(['S0', 'S1', 'S2'], [0, 1, 2])
+x['Gender'] = x['Gender'].replace(['Male', 'Female'], [0, 1])
+x = x.values
+y = df_train['Exited'].values
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 100, stratify=y)
+
 # =============================================================================
-# print(df_train.columns)
-# x = df_train[['CreditScore', 'Geography', 'Gender', 'Age', 'Balance', 'Tenure', 'NumOfProducts',  'HasCrCard', 'IsActiveMember', 'EstimatedSalary']].copy()
-# x['Geography'] = x['Geography'].replace(['S0', 'S1', 'S2'], [0, 1, 2])
-# x['Gender'] = x['Gender'].replace(['Male', 'Female'], [0, 1])
-# x = x.values
-# y = df_train['Exited'].values
-# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 100, stratify=y)
+# x_train = df_train[['CreditScore', 'Geography', 'Gender', 'Age', 'Balance', 'Tenure', 'NumOfProducts',  'HasCrCard', 'IsActiveMember', 'EstimatedSalary']]
+# x_train['Geography'] = x_train['Geography'].replace(['S0', 'S1', 'S2'], [0, 1, 2])
+# x_train['Gender'] = x_train['Gender'].replace(['Male', 'Female'], [0, 1])
+# x_train = x_train.values
+# 
+# y_train = df_train['Exited'].values
+# 
+# x_test = df_test[['CreditScore', 'Geography', 'Gender', 'Age', 'Balance', 'Tenure', 'NumOfProducts',  'HasCrCard', 'IsActiveMember', 'EstimatedSalary']]
+# x_test['Geography'] = x_test['Geography'].replace(['S0', 'S1', 'S2'], [0, 1, 2])
+# x_test['Gender'] = x_test['Gender'].replace(['Male', 'Female'], [0, 1])
+# x_test = x_test.values
 # =============================================================================
-
-x_train = df_train[['CreditScore', 'Geography', 'Gender', 'Age', 'Balance', 'Tenure', 'NumOfProducts',  'HasCrCard', 'IsActiveMember', 'EstimatedSalary']]
-x_train['Geography'] = x_train['Geography'].replace(['S0', 'S1', 'S2'], [0, 1, 2])
-x_train['Gender'] = x_train['Gender'].replace(['Male', 'Female'], [0, 1])
-x_train = x_train.values
-
-y_train = df_train['Exited'].values
-
-x_test = df_test[['CreditScore', 'Geography', 'Gender', 'Age', 'Balance', 'Tenure', 'NumOfProducts',  'HasCrCard', 'IsActiveMember', 'EstimatedSalary']]
-x_test['Geography'] = x_test['Geography'].replace(['S0', 'S1', 'S2'], [0, 1, 2])
-x_test['Gender'] = x_test['Gender'].replace(['Male', 'Female'], [0, 1])
-x_test = x_test.values
 #%%
 from sklearn.ensemble import BaggingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
-bagging = BaggingClassifier(KNeighborsClassifier(), max_samples=0.5, max_features=0.5)
+bagging = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), max_samples=0.5, max_features=0.5)
 
 bagging.fit(x_train, y_train)
 
