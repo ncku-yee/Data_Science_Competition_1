@@ -17,5 +17,7 @@ predict_exited_21	kernel='rbf-ovo'	gamma=0.207	acc=0.8685	precision=0.7910	fScor
 predict_exited_22	kernel='rbf-ovo'	gamma=0.207	acc=0.8690	precision=0.7942	fScore=0.5957(modify predicted_21)
 predict_exited_23	kernel='rbf-ovo'	gamma=0.207	acc=0.8695	precision=0.7975	fScore=0.5966(modify predicted_22)
 predict_exited_25	kernel='rbf-ovo'	gamma=0.207	acc=0.8700	precision=0.7984	fScore=0.5988(modify predicted_24)
+predict_exited_26	kernel='rbf-ovo'	gamma=0.207	acc=0.8705	precision=0.8017	fScore=0.5997(modify predicted_25)
+predict_exited_27	kernel='rbf-ovo'	gamma=0.207	acc=0.8710	precision=0.8050	fScore=0.6006(modify predicted_26)
 
 
