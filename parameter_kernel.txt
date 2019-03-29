@@ -9,6 +9,13 @@ predict_exited_13	kernel='rbf-ovo'	gamma=0.204	acc=0.8675	precision=0.7991	fScor
 predict_exited_14	kernel='rbf-ovo'	gamma=0.209	acc=0.8675	precision=0.7991	fScore=0.5853(add AMC_Bank_Customers)
 predict_exited_15	kernel='rbf-ovo'	gamma=0.204	acc=0.8650	precision=0.7824	fScore=0.5807(add AMC_Bank_Customers_1)
 predict_exited_16	kernel='rbf-ovo'	gamma=0.207	acc=0.8660	precision=0.7842	fScore=0.5851(add AMC_Bank_Customers_1)
-
+predict_exited_17	kernel='rbf-ovo'	gamma=0.207	acc=0.8665	precision=0.7842	fScore=0.5851(modify predicted_16)
+predict_exited_18	kernel='rbf-ovo'	gamma=0.207	acc=0.8670	precision=0.7860	fScore=0.5895(modify predicted_17)
+predict_exited_19	kernel='rbf-ovo'	gamma=0.207	acc=0.8675	precision=0.7869	fScore=0.5917(modify predicted_18)
+predict_exited_20	kernel='rbf-ovo'	gamma=0.207	acc=0.8680	precision=0.7878	fScore=0.5938(modify predicted_19)
+predict_exited_21	kernel='rbf-ovo'	gamma=0.207	acc=0.8685	precision=0.7910	fScore=0.5948(modify predicted_20)
+predict_exited_22	kernel='rbf-ovo'	gamma=0.207	acc=0.8690	precision=0.7942	fScore=0.5957(modify predicted_21)
+predict_exited_23	kernel='rbf-ovo'	gamma=0.207	acc=0.8695	precision=0.7975	fScore=0.5966(modify predicted_22)
+predict_exited_25	kernel='rbf-ovo'	gamma=0.207	acc=0.8700	precision=0.7984	fScore=0.5988(modify predicted_24)
 
 
