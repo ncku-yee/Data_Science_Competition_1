@@ -1,7 +1,7 @@
 file	parameter
 predict_exited_6	kernal='rbf-ovo'	gamma=0.1	acc=0.8580	precision=0.8387	fScore=0.5375
 predict_exited_7	kernel='rbf-ovo'	gamma=0.081	acc=0.8595	precision=0.8039	fScore=0.5386
-predict_exited_8	kernel='bagging'	acc=0.84	precision=X	fScore=X
+predict_exited_8	method='bagging'	acc=0.84	precision=X	fScore=X
 predict_exited_9	kernel='rbf-ovo'	gamma=0.057	acc=0.8615	precision=0.8387	fScore=0.5406
 predict_exited_10	kernel='rbf-ovo'	gamma=0.057	acc=0.8625	precision=0.8387	fScore=0.5514(add AMC_Bank_Customers)
 predict_exited_12	kernel='rbf-ovo'	gamma=0.056	acc=0.8630	precision=0.8164	fScore=0.5523(add AMC_Bank_Customers)
@@ -19,5 +19,17 @@ predict_exited_23	kernel='rbf-ovo'	gamma=0.207	acc=0.8695	precision=0.7975	fScor
 predict_exited_25	kernel='rbf-ovo'	gamma=0.207	acc=0.8700	precision=0.7984	fScore=0.5988(modify predicted_24)
 predict_exited_26	kernel='rbf-ovo'	gamma=0.207	acc=0.8705	precision=0.8017	fScore=0.5997(modify predicted_25)
 predict_exited_27	kernel='rbf-ovo'	gamma=0.207	acc=0.8710	precision=0.8050	fScore=0.6006(modify predicted_26)
+predict_exited_29	method='extratree'	n_estimator = 30	acc=0.8705	precision=X	fScore=X
+predict_exited_30	method='extratree'	n_estimator = 20	acc=0.8640	precision=X	fScore=0.6219
+predict_exited_31	method='extratree'	n_estimator = 30	min_samples_split=7	acc=0.8700	precision=0.7695	fScore=0.6142
+predict_exited_32	method='extratree'	n_estimator = 30	min_samples_split=9	acc=0.8685	precision=0.7689	fScore=0.6069
+predict_exited_34	method='extratree'	n_estimator = 30	min_samples_split=7	acc=0.8720	precision=0.7729	fScore=0.6224(modify predicted_31)
+
+
+
+
+
+
+
 
 
